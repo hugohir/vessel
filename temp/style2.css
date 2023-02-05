@@ -1,0 +1,193 @@
+
+#map {
+      /* configure the size of the map */
+      /* width: 100%;
+      height: 100%;*/
+
+      height: 180px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      font: 16px Arial;
+    }
+    .autocomplete {
+      /*the container must be positioned relative:*/
+      position: relative;
+      display: inline-block;
+    }
+    input {
+      border: 1px solid transparent;
+      background-color: #f1f1f1;
+      padding: 10px;
+      font-size: 16px;
+    }
+    input[type=text] {
+      background-color: #f1f1f1;
+      width: 100%;
+    }
+    input[type=submit] {
+      background-color: DodgerBlue;
+      color: #fff;
+    }
+
+    .autocomplete-items {
+      position: absolute;
+      border: 1px solid #d4d4d4;
+      border-bottom: none;
+      border-top: none;
+      z-index: 99;
+      /*position the autocomplete items to be the same width as the container:*/
+      top: 100%;
+      left: 0;
+      right: 0;
+    }
+    .autocomplete-items div {
+      padding: 10px;
+      cursor: pointer;
+      background-color: #3c3c3c;
+      border-bottom: 1px solid #d4d4d4;
+    }
+    .autocomplete-items div:hover {
+      /*when hovering an item:*/
+      background-color: #e9e9e9;
+    }
+    .autocomplete-active {
+      /*when navigating through the items using the arrow keys:*/
+      background-color: DodgerBlue;
+      color: #ffffff;
+    }
+
+    .icon-input-btn{
+      display: inline-block;
+      position: relative;
+      width: 5em;
+
+  }
+  .icon-input-btn input[type="submit"]{
+      padding-left: 2em;
+background-color: #000000;
+
+  }
+  .icon-input-btn .fa{
+      display: inline-block;
+      position: absolute;
+      left: 0.65em;
+      top: 20%;
+
+
+    }
+
+    /* The snackbar - position it at the bottom and in the middle of the screen */
+   #snackbar {
+     visibility: hidden; /* Hidden by default. Visible on click */
+     min-width: 250px; /* Set a default minimum width */
+     margin-left: -125px; /* Divide value of min-width by 2 */
+     background-color: #333; /* Black background color */
+     color: #fff; /* White text color */
+     text-align: center; /* Centered text */
+     border-radius: 2px; /* Rounded borders */
+     padding: 16px; /* Padding */
+     position: fixed; /* Sit on top of the screen */
+     z-index: 1; /* Add a z-index if needed */
+     left: 50%; /* Center the snackbar */
+     bottom: 30px; /* 30px from the bottom */
+   }
+
+   /* Show the snackbar when clicking on a button (class added with JavaScript) */
+   #snackbar.show {
+     visibility: visible; /* Show the snackbar */
+     /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+     However, delay the fade out process for 2.5 seconds */
+     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+     animation: fadein 0.5s, fadeout 0.5s 2.5s;
+   }
+
+   /* Animations to fade the snackbar in and out */
+   @-webkit-keyframes fadein {
+     from {bottom: 0; opacity: 0;}
+     to {bottom: 30px; opacity: 1;}
+   }
+
+   @keyframes fadein {
+     from {bottom: 0; opacity: 0;}
+     to {bottom: 30px; opacity: 1;}
+   }
+
+   @-webkit-keyframes fadeout {
+     from {bottom: 30px; opacity: 1;}
+     to {bottom: 0; opacity: 0;}
+   }
+
+   @keyframes fadeout {
+     from {bottom: 30px; opacity: 1;}
+     to {bottom: 0; opacity: 0;}
+   }
+
+   .radar {
+
+           /* from leaflet-control-layers */
+           border-radius: 5px;
+           background: #fff;
+           border: 2px solid rgba(0, 0, 0, 0.2);
+           background-clip: padding-box;
+
+           padding: 5px;
+           height: 67.5px;
+   }
+
+   .radar .radar-timestamp {
+           text-align: center;
+   }
+
+   .dropdown-check-list {
+  display: inline-block;
+}
+
+.dropdown-check-list .anchor {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 50px 5px 10px;
+  border: 1px solid #ccc;
+}
+
+.dropdown-check-list .anchor:after {
+  position: absolute;
+  content: "";
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  padding: 5px;
+  right: 10px;
+  top: 20%;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.dropdown-check-list .anchor:active:after {
+  right: 8px;
+  top: 21%;
+}
+
+.dropdown-check-list ul.items {
+  padding: 2px;
+  display: none;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.dropdown-check-list ul.items li {
+  list-style: none;
+}
+
+.dropdown-check-list.visible .anchor {
+  color: #0094ff;
+}
+
+.dropdown-check-list.visible .items {
+  display: block;
+}

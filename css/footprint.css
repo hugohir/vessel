@@ -1,0 +1,410 @@
+.sbutton {
+    position: absolute;
+    z-index: 999;
+}
+
+div.beams_bar {
+  text-align : center;
+  height : 90px;
+  overflow-x : auto;
+  overflow-y : hidden;
+  background-color : transparent;
+  margin-top : 8px;
+  margin-bottom : 2px;
+}
+
+.beams_bar::-webkit-scrollbar {
+  -webkit-appearance: none;
+}
+
+.beams_bar::-webkit-scrollbar:horizontal {
+  height: 11px;
+}
+
+.beams_bar::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 2px solid white;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.beams_bar::-webkit-scrollbar-track {
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+div.sat {
+  text-align : center;
+/*  background-color : #efefef; */
+  background-color : transparent;
+  margin : 8px;
+}
+
+fieldset.sat {
+  text-align : center;
+  padding : 2px;
+  background-color : transparent;
+}
+
+legend.sat {
+  font-size : 80%;
+  text-align : left;
+  display : block;
+  width : 100%;
+  color : black;
+  white-space : nowrap;
+  background-color : transparent;
+}
+
+a.beam {
+  padding : 2px;
+  text-align : center;
+  font-size : 80%;
+  width: auto;
+  display: block;
+  text-decoration : none;
+  margin : auto;
+  white-space : nowrap;
+}
+
+a.beam img {
+  width : 34px;
+  height : 34px;
+}
+
+.band_S {
+  background-color : #cde5b3;
+}
+
+.band_X {
+  background-color : #dadbff;
+}
+
+.band_L {
+  background-color : #c9e1f0;
+}
+
+.band_C {
+  background-color : #f9aff3;
+}
+
+.band_Ku {
+  background-color : #ffd2d2;
+}
+
+.band_Ka {
+  background-color : #f9d6b8;
+}
+
+.band_Q {
+  background-color : #fffccd;
+}
+
+a.selected {
+  border : gray solid 1px;
+  padding : 1px;
+}
+
+#map {
+    position: relative;
+    height: 450px;
+    background-color: #e5e3df;
+}
+
+#map .load {
+    position: relative;
+    top: 30%;
+}
+
+/**
+ * @author Aleske A. Evdokimov <ale@izhcat.ru>
+ * @version $Id: satmap.css 1069 2009-06-18 09:32:57Z chip $
+ */
+
+div.satmap_control {
+  position : absolute;
+  border : black solid 1px;
+}
+
+div.control_button {
+  background-color : white;
+  width : 11em;
+  font-size : 12px;
+  line-height : 1em;
+  text-align : center;
+  cursor : pointer;
+    padding: 2px;
+}
+
+div.control_small {
+  background-color : white;
+  width : 1.4em;
+  font-size : 12px;
+  line-height : 1em;
+  text-align : center;
+  cursor : default;
+}
+
+div.state_active {
+  font-weight : bold;
+  border-top : #345684 1px solid;
+  border-left : #345684 1px solid;
+  border-bottom : #6c9ddf 1px solid;
+  border-right : #6c9ddf 1px solid;
+}
+
+div.state_inactive {
+  font-weight : normal;
+  border-top : white 1px solid;
+  border-left : white 1px solid;
+  border-bottom : #b0b0b0 1px solid;
+  border-right : #b0b0b0 1px solid;
+}
+
+div.map {
+  position: relative;
+  background-color: #e5e3df;
+  width: 100%;
+  height: 450px;
+}
+
+div.big_map {
+  height : 100% !important;
+}
+
+div.big_satbar {
+  position : absolute;
+  top : 0px;
+  left : 5em;
+  right : 30%;
+  z-index : 10;
+  height: 130px;
+  /*background-color : white;*/
+  /*border : black solid 1px;*/
+  padding : 4px !important;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+div.map_container {
+  background-color : white;
+}
+
+div.big_container {
+  z-index : 110;
+  position: absolute !important;
+  top: 0px;
+  left : 0px;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+}
+
+.load {
+    width: 175px;
+    border:1px solid #6593cf;
+    background:#c3daf9 url(/images/default/box/tb-blue.gif) repeat-x 0 -16px;
+    padding: 2px;
+    margin: auto;
+    margin-top: 50px;
+    z-index : 1000;
+}
+
+.load div{
+    border:1px solid #a3bad9;
+    color:#222;
+    font:normal 11px tahoma,arial,helvetica,sans-serif;
+    cursor:wait;
+
+    padding:5px 10px 5px 25px;
+    background:#fbfbfb url(/images/default/grid/loading.gif) no-repeat 5px 5px;
+    line-height:16px;
+}
+
+.info {
+    width: 175px;
+    border:1px solid #6593cf;
+    background:#c3daf9 url(/images/default/box/tb-blue.gif) repeat-x 0 -16px;
+    padding: 2px;
+    margin: auto;
+}
+
+.info div{
+    border:1px solid #a3bad9;
+    color:#222;
+    font:normal 11px tahoma,arial,helvetica,sans-serif;
+
+    padding:5px 10px 5px 25px;
+    background:#fbfbfb url(/images/icons/fam/information.png) no-repeat 5px 5px;
+    line-height:16px;
+}
+
+.infholder {
+  background-color : white;
+}
+
+div.big_map .load {
+  margin-top: 200px !important;
+}
+
+div.big_container div.beams_bar {
+  height : auto !important;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+div.big_info {
+  z-index : 110;
+  position: absolute !important;
+  top: 0px;
+  left: 70.2%;
+  right : 6.2em;
+  /*width : 17em;*/
+  /*border : black solid 1px;*/
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+@media print {
+  div.big_info {
+    display : none;
+  }
+
+  div.big_satbar {
+    display : none;
+  }
+}
+
+.wide {
+  width : 100%;
+}
+
+div.scale {
+  position : relative;
+  bottom : 2px;
+  left : 2px;
+  z-index : 1000;
+}
+
+.info_tr td {
+    padding: 2px;
+    border-bottom:1px solid #99BBE8;
+    border-right:1px solid #99BBE8;
+}
+
+.info_tr th {
+    padding: 2px;
+    border-bottom:1px solid #99BBE8;
+    border-right:1px solid #99BBE8;
+    text-align: center;
+    font-weight: bolder;
+    white-space:nowrap;
+}
+
+table.other {
+  width:99%;
+  margin:3px;
+  border-top:1px solid #99BBE8;
+  border-left:1px solid #99BBE8;
+}
+
+img.small {
+  height : 17px;
+  width : 10px;
+}
+
+.gm-style-iw div {
+    overflow: visible !important;
+}
+
+/*
+   custom style for range input 
+*/
+input[type=range] {
+    /*removes default webkit styles*/
+    -webkit-appearance: none;
+    
+    /*fix for FF unable to apply focus style bug */
+    /*border: 1px solid white*/
+    
+    /*required for proper track sizing in FF*/
+    width: 64px;
+
+    background:transparent; 
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 64px;
+    height: 3px;
+    background: #ddd;
+    border: none;
+    /*border-radius: 2px;*/
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #777;
+    margin-top: -4px;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;
+}
+
+input[type=range]::-moz-range-track {
+    width: 64px;
+    height: 4px;
+    background: #ddd;
+    border: none;
+    border-radius: 2px;
+}
+input[type=range]::-moz-range-thumb {
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #777;
+}
+
+/*hide the outline behind the border*/
+input[type=range]:-moz-focusring{
+    outline: 1px solid white;
+    outline-offset: -1px;
+    background: transparent;
+}
+
+input[type=range]::-ms-track {
+    width: 64px;
+    height: 4px;
+    
+    /*remove bg colour from the track, we'll use ms-fill-lower and ms-fill-upper instead */
+    background: transparent;
+    
+    /*leave room for the larger thumb to overflow with a transparent border */
+    border-color: transparent;
+    border-width: 6px 0;
+
+    /*remove default tick marks*/
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #777;
+    border-radius: 10px;
+}
+input[type=range]::-ms-fill-upper {
+    background: #ddd;
+    border-radius: 16px;
+}
+input[type=range]::-ms-thumb {
+    border: none;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #777;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #888;
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #ccc;
+}

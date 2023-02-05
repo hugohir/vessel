@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+<ul>
+  <li>
+    <a href="#">
+      <img src="images/vessels/carnival/carnival_dream.jpg" alt="Carnival Dream">
+      <span>Carnival Dream</span>
+    </a>
+  </li>
+    <a href="#">
+      <img src="images/vessels/carnival/carnival_freedom.jpg" alt="Carnival Dream">
+      <span>Carnival Freedom</span>
+    </a>
+  <li>
+    <a href="#">
+      <img src="images/vessels/carnival/carnival_ecstasy.jpg" alt="Carnival Dream">
+      <span>Carnival Freedom</span>
+    </a>
+  </li>
+    <a href="#">
+      <img src="images/vessels/celebrity/celebrity_equinox.jpg" alt="Carnival Dream">
+      <span>Celebrity Equinox</span>
+    </a>
+  <li>
+    <a href="#">
+      <img src="images/vessels/royalcaribbean/rc_adventureoftheseas.jpg" alt="Carnival Dream">
+      <span>RC Adventure of the Seas/span>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <img src="images/vessels/royalcaribbean/rc_independenceoftheseas.jpg" alt="Carnival Dream">
+      <span>RC Independence of the Seas</span>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <img src="images/vessels/carnival_freedom.jpg" alt="Carnival Dream">
+      <span>Carnival Freedom</span>
+    </a>
+  </li>
+</ul>
+</body>
+</html>

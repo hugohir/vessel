@@ -1,0 +1,129 @@
+/**
+ * @author Aleske A. Evdokimov <ale@izhcat.ru>
+ * @version $Id$
+ */
+
+div.sat_bar .paint {
+    position: relative;
+    height: 45px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+div.sat_bar .satbar_left {
+    float: left;
+}
+
+div.sat_bar .satbar_right {
+    float: right;
+}
+
+div.sat_bar .satbar_link {
+}
+
+div.sat_bar .satbar_link a {
+  font-family : Tahoma, Verdana, Arial, sans-serif;
+  color : #808080;
+  text-decoration : none;
+  display : block;
+  text-align : center;
+  font-size : 9px;
+}
+
+div.sat_bar .satbar_link img {
+    width: 24px;
+    height: 24px;
+}
+
+div.sat_bar .label {
+  position : absolute;
+  top : 32px;
+  font-family : Tahoma, Verdana, Arial, sans-serif;
+  font-size : 9px;
+  font-weight : normal;
+  color : #808080;
+  margin-left : -10px;
+  z-index : 10;
+  display : block;
+}
+
+div.sat_bar .sat_div {
+  position : absolute;
+  top : 0px;
+  width : 10px;
+  height : 21px;
+  margin-left : -5px;
+}
+
+div.sat_bar a.satellite_selected {
+  background-image : url(/images/satellite_selected.png);
+}
+
+div.sat_bar a.satellite_gray {
+  background-image : url(/images/satellite_gray.png);
+}
+
+div.sat_bar a.satellite_black {
+  background-image : url(/images/satellite_black.png);
+}
+
+div.sat_bar .empty {
+  position : absolute;
+  width : 1px;
+}
+
+div.sat_bar .p10 {
+  top : 22px;
+  height : 8px;
+}
+
+div.sat_bar .p5 {
+  top : 24px;
+  height : 4px;
+}
+
+div.sat_bar .p1 {
+  top : 25px;
+  height : 2px;
+}
+
+div.sat_bar .light {
+  background-color : #cfcfcf;
+}
+
+div.sat_bar .inactive {
+  background-color : #4a4a4a;
+}
+
+div.sat_bar .pos {
+  background-color : #4a4a4a;
+  font-weight : bold;
+  color : white;
+}
+
+div.sat_bar .list {
+  background-color : #efefef;
+  color : black;
+  padding : 2px;
+  position : relative;
+  left : -50%;
+}
+
+div.sat_bar .active {
+  background-color : red;
+  font-weight : bold;
+  color : white;
+  z-index : 100;
+}
+
+div.sat_bar .none {
+  background-color : #808080;
+}
+
+div.sat_bar .hidden {
+  display : none;
+}
+
+div.sat_bar .fly {
+  z-index : 100;
+}

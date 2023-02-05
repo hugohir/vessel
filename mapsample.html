@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Using maxBounds to restrict map panning</title>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v3.3.1/mapbox.css' rel='stylesheet' />
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+</style>
+</head>
+<body>
+
+<div id='map'></div>
+
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiaGhpcmFva2EiLCJhIjoiY2t3emU0MGFhMHU4azJ3cXJ6N2dkMThrMyJ9.dpGqvzXwDyKe0LV3OnMKXQ';
+// Construct a bounding box for this map that the user cannot
+// move out of
+var southWest = L.latLng(88, -180),
+    northEast = L.latLng(-88, 180),
+    bounds = L.latLngBounds(southWest, northEast);
+
+var map = L.mapbox.map('map', null, {
+    // set that bounding box as maxBounds to restrict moving the map
+    // see full maxBounds documentation:
+    // http://leafletjs.com/reference.html#map-maxbounds
+    maxBounds: bounds,
+    maxZoom: 18,
+    minZoom: 2.9
+})
+  .setView([25.571314, -80.314263], 8)
+  .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));
+
+// zoom the map to that bounding box
+map.fitBounds(bounds);
+</script>
+
+</body>
+</html>
