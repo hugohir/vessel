@@ -7,8 +7,9 @@ L.Control.Rainviewer = L.Control.extend({
         positionSliderLabelText: "Hour:",
         opacitySliderLabelText: "Opacity:",
         animationInterval: 500,
-        opacity: 0.5
-    },
+        opacity: 0.5,
+        radarlayer: "Radar"
+      },
 
     onAdd: function (map) {
         /**
@@ -109,6 +110,9 @@ L.Control.Rainviewer = L.Control.extend({
         L.DomEvent.on(this.opacitySlider, 'input', t.setOpacity, this);
         L.DomEvent.disableClickPropagation(this.opacitySlider);
 
+        this.positionSliderLabel = L.DomUtil.create('label', 'leaflet-control-rainviewer-label leaflet-bar-part', this.controlContainer);
+        this.positionSliderLabel.for = "rainviewer-positionslider";
+        this.positionSliderLabel.textContent = this.options.radarlayer;
 
         this.closeButton = L.DomUtil.create('div', 'leaflet-control-rainviewer-close', this.container);
         L.DomEvent.on(this.closeButton, 'click', t.unload, this);

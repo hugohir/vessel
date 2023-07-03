@@ -8,12 +8,12 @@
 <?php
 
 session_start();
-//include_once "dbconfig.php";
-//include "vessel_list.php";
-//get teleport data
+
+//define array to store vessel position
 $arrayLastPositionrec = array();
 //$arrayCruisers = $_SESSION['cruisersList'];
 
+#retrieve position data
 $sqli_lpList = "SELECT vessel_MMSI, MAX(location_recno) AS location_recno,
 SUBSTRING(MAX(CONCAT(LPAD(location_recno, 11, '0'), loc_latitude)), 12) AS loc_latitude,
 SUBSTRING(MAX(CONCAT(LPAD(location_recno, 11, '0'), loc_longitude)), 12) AS loc_longitude,
@@ -32,13 +32,14 @@ FROM Positioning GROUP BY vessel_MMSI;";
 
 $resulti_lpList = $conn->query($sqli_lpList);
 
+#store into array if data available
 if ($resulti_lpList -> num_rows >0){
   while ($row = $resulti_lpList->fetch_assoc()){
     $arrayLastPositionrec[] = $row;
   }
 }
 else {
-  echo "0 results";
+  echo "No vessel position data was found or error ocurred.";
 }
 
 

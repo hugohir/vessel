@@ -1,0 +1,236 @@
+<main class = "main-content">
+<!--<div class="fixed-top">-->
+<!--<div class="container-fluid" style="padding-top: 140px"> -->
+<!-- <div class="detail-image-container" style="padding-top: 140px"> -->
+
+
+
+<div class= "col-12" style="padding-top: 440x">
+
+	<div class="row">
+		<!-- <img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat"> -->
+				<div id='map'> </div>
+
+					<script>
+					var map = L.map('map', {maxZoom: 19, minZoom: 1.5 }).setView([24.34541, -76.598297],5);
+					//map.options.minZoom = 19;
+					//map.options.maxZoom = 10;
+					//Layer variables
+					var regular = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {noWrap:false, maxZoom: 19}).addTo(map);
+
+
+					//var southWest = L.latLng(88,-180),
+					//    northEast = L.latLng(-88, 180),
+					//    bounds = L.latLngBounds(southWest, northEast);
+					//L.PM.setOptIn(true); //set to false to disable
+					//var map = L.map('map', {
+					//	maxBounds: bounds,
+					//	center: [24.34541, -76.598297],
+					//	maxZoom: 19,
+					//zoomSnap: 0.1
+					//minZoom: 2.9
+					//	minZoom: 2.9
+					//});
+					//map.fitBounds(bounds);
+
+					var popup = L.popup();
+
+					function onMapClick(e) {
+	      		popup
+	          .sbs3aetLatLng(e.latlng)
+	          .setContent("Coordinates: " + e.latlng.toString())
+	          .openOn(map);
+	  			}
+
+					//	map.pm.addControls({
+					//	  position: 'topleft',
+					//	  drawCircle: false,
+					//	});
+
+				map.on('pm:create', function(e) {
+			  var coords = e.layer.getLatLngs();
+			  console.log(coords);
+			});
+
+					map.on('click', onMapClick);
+
+				//L.control.radar({}).addTo(map);
+
+				/*L.control.rainviewer({
+						position: 'topleft',
+						nextButtonText: '>',
+						playStopButtonText: 'Play/Stop',
+						prevButtonText: '<',
+						positionSliderLabelText: "Hour:",
+						opacitySliderLabelText: "Opacity:",
+						animationInterval: 2000,
+						opacity: 0.5
+				}).addTo(map);
+				*/
+				//const time_ny =
+				//getTime();
+
+				//console.log("temp1s: "+temp1s);
+				//const mytime = JSON.parse(time01);
+				//document.getElementById("demo").innerHTML = mytime.datetime;
+				//console.log("NY Time is : ");console.log(time_ny);
+
+				//bring up controls to add/remove layer: satellites (js: satellites.js)
+				satelliteLayers();
+
+				//bring up control to add/remove layer teleports (js: teleport.js)
+				teleportLayers(<?php echo json_encode($arrayTeleports);?>);
+
+				//bring up the controls to add/remove Cruisers by company: cruise companies (js: cruiseliners.js)
+				cruiselineCompanyLayers(<?php echo json_encode($arrayLastPositions);?>,
+
+				//get data from arrays created in php - data extratected from database
+				<?php echo json_encode($arrayAllCruisers);?>,
+				<?php echo json_encode($arrayCruiselineCompanies);?>);
+
+				//bring up cpntrols to add/remove Map backgrounds (js: mapbackgrounds.js)
+				setMapBackgrounds();
+
+				//portLayers(<?php //echo json_encode($arrayPorts);?>);
+
+				//bring up the control of the rainviewer on the screen
+				L.control.rainviewer({position: 'topleft'}).addTo(map);
+				//console.log("time is "+ time_a);
+
+
+		//dayNight();
+
+		</script>
+
+		<!-- </div> -->
+
+</div>
+
+
+<div class="row">
+	<ul class = "thumbnail-list">
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+
+		<li class = "thumbnail-item">
+			<a href="#">
+				<img class= "thumbnail-image" src="images/boat-1.jpg" width=120px alt "Boat">
+				<span class ="thumbnail-title">Cruiser</span>
+			</a>
+		</li>
+	</ul>
+	</div>
+
+</div>
+</main>

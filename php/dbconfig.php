@@ -22,11 +22,12 @@ $conn = new mysqli($servername,$username,$password,$dbname);
 //database 1 check connection
 if ($conn->connect_error)
   {
+    echo '<script>console.log("Critical Error. Connection Failed."); </script>';
     die("Connection failed: ".$conn->connect_error);
   }
 else
   {
-       //echo "Connected successfully";
+       echo '<script>console.log("Connected successfully."); </script>';
   }
 
 

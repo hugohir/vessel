@@ -11,10 +11,10 @@ L.Control.Radar = L.Control.extend({
     timeLayers: [],
 
     options: {
-        position: `topright`,
-        opacity: 0.575,
+        position: `topleft`,
+        opacity: 0.775,
         zIndex: 200,
-        transitionMs: 750,
+        transitionMs: 500,
         playHTML: `&#9658;`,
         pauseHTML: `&#9616;`,
     },

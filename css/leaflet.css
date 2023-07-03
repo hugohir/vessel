@@ -36,7 +36,7 @@
 /* hack that prevents hw layers "stretching" when loading new tiles */
 .leaflet-safari .leaflet-tile-container {
 	width: 1600px;
-	height: 1600px;
+	height: 160px;
 	-webkit-transform-origin: 0 0;
 	}
 .leaflet-marker-icon,
@@ -90,6 +90,7 @@
 .leaflet-zoom-box {
 	width: 0;
 	height: 0;
+	text-align: center;
 	-moz-box-sizing: border-box;
 	     box-sizing: border-box;
 	z-index: 800;
@@ -100,7 +101,6 @@
 	}
 
 .leaflet-pane         { z-index: 400; }
-
 .leaflet-tile-pane    { z-index: 200; }
 .leaflet-overlay-pane { z-index: 400; }
 .leaflet-shadow-pane  { z-index: 500; }
@@ -262,6 +262,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 .leaflet-zoom-box {
 	border: 2px dotted #38f;
 	background: rgba(255,255,255,0.5);
+
 	}
 
 
@@ -280,6 +281,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	box-shadow: 0 1px 5px rgba(0,0,0,0.65);
 	border-radius: 4px;
 	}
+
 .leaflet-bar a {
 	background-color: #fff;
 	border-bottom: 1px solid #ccc;
@@ -331,11 +333,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	}
 
 /* zoom control */
-
 .leaflet-control-zoom-in,
 .leaflet-control-zoom-out {
-	font: bold 18px 'Lucida Console', Monaco, monospace;
+	font: bold 24px 'Lucida Console', Monaco, monospace;
 	text-indent: 1px;
+	padding: 22px 22px;
 	}
 
 .leaflet-touch .leaflet-control-zoom-in, .leaflet-touch .leaflet-control-zoom-out  {
@@ -479,6 +481,11 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border-radius: 12px;
 	}
 .leaflet-popup-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: auto !important;
+	max-width: 100%;
 	margin: 13px 24px 13px 20px;
 	line-height: 1.3;
 	font-size: 13px;
@@ -512,6 +519,14 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	    -ms-transform: rotate(45deg);
 	        transform: rotate(45deg);
 	}
+
+.leaflet-popup-content img {
+	  max-width: 40vw;
+	  max-height: 30vw;
+	  width: auto;
+	  height: auto;
+	}
+
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
 	background: white;

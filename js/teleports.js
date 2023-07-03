@@ -6,7 +6,6 @@
 //*****************************************************************************
 
 
-
 function teleportLayers(arraytp)
 {
 //L.terminator().addTo(map);
@@ -111,8 +110,6 @@ checkColorShadow();
 setInterval(checkColorShadow, 5000);
 
 
-
-
 //store img path from teleport data into array, create proper script
 for (var i=0; i<arraytp.length;i++)
   {
@@ -148,14 +145,12 @@ for (var i=0; i<arraytp.length;i++)
 //Set the default teleport
 map.addLayer(tpLayerNo[0]);
 
-
 //dynamically add layers
 var overlays = {
     //"CSC Miami": tpMarkerNo[0],
     //'Alpine NJ': tpMarkerNo[1],
     //'Horizons DL': tpMarkerNo[2]
 	};
-
 
 	//add overlays for each teleport
 	for (var i=0; i<arraytp.length;i++)
@@ -165,10 +160,6 @@ var overlays = {
 
 	//add layer control to map
 	var layerControlTeleports = L.control.layers(null,overlays, {position: 'topleft'}).addTo(map);
-
-
-
-
 
 	function checkColorShadow()
 	{
@@ -187,11 +178,6 @@ var overlays = {
 		console.log(timedifference);
 
 		//from browser UTC
-
-
-
-
-
 
 		for (var tpNum=0; tpNum < arraytp.length; tpNum++)
 		{

@@ -6,21 +6,25 @@
 //***************************************************************************-->
 
 <?php
-//include_once "dbconfig.php";
 
+//Define array to hold vessel and company name data
 $arrayVesselNameDashCompany = array("","");
 
+#retrieve data vessel and company from database
 $sqli_listVessels = "SELECT Vessels.vessel_name,Vessels.vessel_company,Companies.company_id,Companies.company_name FROM Vessels INNER JOIN Companies ON Vessels.vessel_company = Companies.company_id";
 $resulti_listVessels = $conn->query($sqli_listVessels);
 
+#store retrieved data from database if available
 if ($resulti_listVessels -> num_rows > 0) {
     while($row = $resulti_listVessels->fetch_array()){
       $arrayVesselNameDashCompany[]= $row["vessel_name"]."-".$row["company_name"];
     }
+    echo '<script>console.log("Vessel-Company data loaded successfully"); </script>';
 }
 else
 {
-  echo "wrong";
+  echo '<script>console.log("Error! Vessel-Company list could not be loaded."); </script>';
+  echo "No vessel-company data available or error occurred.";
 }
 
 //print_r($arrayVessels);

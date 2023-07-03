@@ -6,154 +6,41 @@
 *****************************************************************************-->
 <?PHP
 session_start();
-//include "vessels_companies.php";
-//include "vesselDashCompany.php";
-//$listOfVessels = $_SESSION['listVessels'];
-//$arrayVesselNameDashCompany = $_SESSION['listVesselDashCompany'];
+include "vessels_companies.php";
+include "vesselDashCompany.php";
+#include "setup.php";
+$listOfVessels = $_SESSION['listVessels'];
+$arrayVesselNameDashCompany = $_SESSION['listVesselDashCompany'];
 ?>
 
 <html>
 <head>
-
-
-<script src="js/autocomplete.js"></script>
-<script src="//widget.time.is/en.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/mylocation.js"></script>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-     <div class="modal-dialog" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h5 class="modal-title" id="ModalLabel">Vessel</h5>
-           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-             <span aria-hidden="true">&times;</span>
-           </button>
-         </div>
-         <div class="modal-body">
-           ...
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-           <button type="button" class="btn btn-primary">Save changes</button>
-</div></div></div></div>
+  <script src="js/autocomplete.js"></script>
+  <script src="//widget.time.is/en.js"></script>
+  <script src="js/mylocation.js"></script>
 </head>
 
 <body>
 
-
-<div class="fixed-top">
-<div class="jumbotron jumbotron-fluid max-width: 100%">
+<!-- top banner -->
 <div class ="container-fluid p-0">
-
-<img id = "topBanner" class="img-fluid" src="images/banners/tp_noon.png" alt="Miami Teleport">
-
-<script>
-
-
-    //var browserTime = locationTime();
-    //console.log("Banner=" + banner);
-
-    var alternateText;
-
-    checkImage();
-
-    //setInterval(checkImage, 90000);
-    setInterval(checkImage, 5000);
-
-    function checkImage() {
-
-      browserTime = locationTime();
-      //console.log(banner);
-
-//night
-    if (browserTime == 0)
-    {
-      document.getElementById("topBanner").src = "images/banners/tp_night.png";
-      //imageBanner = document.getElementById("images/banners/banner_night.jpg";
-      //alternateText = "Miami Teleport Night";
-
-      //<img class="img-fluid" src="images/banners/banner_night.jpg" alt="Miami Teleport Night">;
-    }
-    else if (browserTime == 1)
-    {
-
-      document.getElementById("topBanner").src = "images/banners/tp_morning.png";
-      //alternateText = "Miami Teleport Morning";
-
-      //<img class="img-fluid" src="images/banners/banner_morning.jpg" alt="Miami Teleport Morning">;
-
-    }
-    else if (browserTime == 2)
-    {
-
-      document.getElementById("topBanner").src = "images/banners/tp_noon.png";
-      //alternateText = "Miami Teleport Noon";
-
-      //<img class="img-fluid" src="images/banners/banner_noon.jpg" alt="Miami Teleport Noon">;
-
-    }
-    else if (browserTime == 3)
-    {
-
-      document.getElementById("topBanner").src = "images/banners/tp_afternoon.png";
-      //alternateText = "Miami Teleport Afternoon";
-
-      //<img class="img-fluid" src="images/banners/banner_afternoon.jpg" alt="Miami Teleport Afternoon">;
-
-    }
-
-    else
-    {
-      document.getElementById("topBanner").src = "images/general/tp_noon.png";
-      //alternateText = "Miami Teleport";
-      //<img class="img-fluid" src="images/general/csc_miami_teleport_1920x40_banner_max.jpg" alt="Miami Teleport Night">; }
-}
-
-
-    //document.write('<img class="img-fluid" src='+ imageBanner +' alt=' + alternateText + '>');
-
-    //<img id = "topBanner" class="img-fluid" src= document.write('"' + imageBanner + '" alt ="' + alternateText+'"')> ;
-
-    //markerColorShadow(browserTime);
-    }
-
-  </script>
-
-
-
-  </div>
-  </div>
-
+  <img id = "topBanner" class="img-fluid" src="images/banners/tp_noon.png" alt="Miami Teleport">
   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
-    <div class="container-fluid">
+  <!--Navigation container-->
+  <div class="container-fluid">
 
-      <a class="navbar-brand" href="#">  <img src="images/logos/csc_logo.jpg" alt="CSC Logo" style="width:40px;" class="rounded-pill"> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <!--menu container-->
+    <div class="d-flex align-items-center">
+      <a class="navbar-brand" href="#">
+        <img src="images/logos/csc_logo.jpg" alt="CSC Logo" style="width:40px;" class="rounded-pill">
+      </a>
+
+      <!-- Nav bar -->
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Vessels</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">All</a></li>
-              <li><hr class="dropdown-divider"></hr></li>
-              <li><a class="dropdown-item" href="#">By Company</a></li>
-              <li><a class="dropdown-item" href="#">By First Letter</a></li>
-              <li><a class="dropdown-item" href="#">By Flag</a></li>
-              <li><a class="dropdown-item" href="#">By Year</a></li>
-              <li><hr class="dropdown-divider"></hr></li>
-
-              <li><a class="dropdown-item" href="#">Search"></a></li>
-            </ul>
-          </li>
-
+        <!-- Companies -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Companies</a>
             <ul class="dropdown-menu">
@@ -165,117 +52,261 @@ session_start();
             </ul>
           </li>
 
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Ports</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">All</a></li>
-              <li><hr class="dropdown-divider"></hr></li>
-              <li><a class="dropdown-item" href="#">By Country</a></li>
-              <li><a class="dropdown-item" href="#">By First Letter</a></li>
-              <li><hr class="dropdown-divider"></hr></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Teleports</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">All</a></li>
-              <li><hr class="dropdown-divider"></hr></li>
-              <li><a class="dropdown-item" href="#">Another link</a></li>
-              <li><a class="dropdown-item" href="#">A third link</a></li>
-              <li><a class="dropdown-item" href="#">A third link</a></li>
-            </ul>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Satellites</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">All</a></li>
-              <li><hr class="dropdown-divider"></hr></li>
-              <li><a class="dropdown-item" href="#myModal">Eutelsat 113W</a></li>
-              <li><a class="dropdown-item" href="#">Anik F1R</a></li>
-              <li><a class="dropdown-item" href="#">ABS-3A 3W</a></li>
-              <li>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-                  Open modal
-                </button>
-
-              </li>
-
-            </ul>
-          </li>
-
-          <form autocomplete="off" method='get' class='ajaxform' action="php/cruiser.php">
-          <div class="d-inline-flex align-items-center">
-            <div class="autocomplete" style="width:200px">
-              <input id="myCruise" type="text" name="ship" placeholder="Cruiseliner">
-            </div>
-            <div>
-              <input type="submit" value="Search">
-            </div>
-          </div>
-          </form>
-
-          <li>
-
-            <div class="row h-100 flex-nowrap">
-              <div class="col w-100 p-3"></div>
-              <div class="col w-100 p-3"></div>
-              <div class="col w-100 p-3 bg-primary text-white flex-nowrap">time1</div>
-              <div class="col w-100 p-3"></div>
-              <div class="col w-100 p-3 bg-primary text-white flex-nowrap">time2</div>
-              <div class="col w-100 p-3"></div>
-              <div class="col w-100 p-3 bg-primary text-white flex-nowrap">time3</div>
-              <div class="col w-100 p-3"></div>
-              <div class="col w-100 p-3 bg-primary text-white flex-nowrap">time4</div>
-          </div>
-
-
-          </li>
-
-
-          <script type="text/javascript">
-
-          /*An array containing all the cruiseliners names in the database*/
-          var vesselDashCompany = <?php echo json_encode($arrayVesselNameDashCompany); ?>;
-
-          /*initiate the autocomplete function on the "myCruise" element, and pass along the vessels array as possible autocomplete values:*/
-          autocomplete(document.getElementById("myCruise"), vesselDashCompany);
-          </script>
-
-          <!-- <a href="https://time.is/UTC" id="time_is_link" rel="nofollow" style="font-size:14px">UTC:</a> -->
-          <!-- <span id="UTC_za00" style="font-size:20px; white-space:nowrap;"></span> -->
-
-          <script>
-        //time_is_widget.init({UTC_za00:{template:"TIME | DATE", date_format:"dname, mnum dnum, yy"}});
-        </script>
-
-        </ul>
-    </div>
-
-
-
+        <!--Vessels-->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-            <i class='fas fa-cog' style='font-size:24px; margin-top: 0.125em; vertical-align: middle; color:white;'></i>
-          </a>
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Vessels</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All</a></li>
+              <li><hr class="dropdown-divider"></hr></li>
+              <li><a class="dropdown-item" href="#">By Company</a></li>
+              <li><a class="dropdown-item" href="#">By First Letter</a></li>
+              <li><a class="dropdown-item" href="#">By Flag</a></li>
+              <li><a class="dropdown-item" href="#">By Year</a></li>
+              <li><hr class="dropdown-divider"></hr></li>
+              <li><a class="dropdown-item" href="#">Search"></a></li>
+            </ul>
+          </li>
+
+        <!-- Menu Teleports -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Teleports</a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">App Location</a></li>
-            <li><a class="dropdown-item" href="#">Map</a></li>
-
-            <li><a class="dropdown-item" href="#">Ship Config</a></li>
-            <li><a class="dropdown-item" href="#">Companies</a></li>
-            <li><a class="dropdown-item" href="#">Cruiselines</a></li>
-            <li><a class="dropdown_item" href="#">Ports</a></li>
-            <li><a class="dropdown_item" href="#">Teleports</a></li>
-            <li><a class="dropdown_item" href="#">Satellites</a></li>
-
+            <li><a class="dropdown-item" href="#">All</a></li>
+            <li><hr class="dropdown-divider"></hr></li>
+            <li><a class="dropdown-item" href="#">Shortlist</a></li>
+            <li><a class="dropdown-item" href="#">Region</a></li>
+            <li><a class="dropdown-item" href="#">Country</a></li>
           </ul>
         </li>
 
+        <!-- Menu Ports -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="modal" data-bs-target="#portsModal">Ports</a>
+        </li>
+
+      <!-- Ports Modal -->
+      <!--<div class="modal fade" id="portsModal" tabindex="-1" aria-labelledby="portsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="portsModalLabel">Select Ports</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                <div class="modal-body">
+                  <form id="portsFor">
+                  <div class="mb-3">
+                    <input type="checkbox" id="port1" name="port" value="Port 1">
+                    <label for="port1">Port 1</label>
+                  </div>
+                  <div class="mb-3">
+              <input type="checkbox" id="port2" name="port" value="Port 2">
+              <label for="port2">Port 2</label>
+            </div>
+             Add more checkbox elements for each port -->
+      <!--   </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" onclick="displaySelectedPorts()">Apply</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
     </div>
-  </nav>
+  </div>
+
+<script>
+
+function displaySelectedPorts() {
+  const portsForm = document.getElementById("portsForm");
+  const checkboxes = portsForm.elements.port;
+
+  for (let i = 0; i < checkboxes.length; i++) {
+    const checkbox = checkboxes[i];
+    const portName = checkbox.value;
+    const isChecked = checkbox.checked;
+
+    // Add your logic here to display or hide ports on the map based on checkbox state
+    if (isChecked) {
+      // Display port on the map
+      console.log(`Display port "${portName}" on the map`);
+    } else {
+      // Hide port from the map
+      console.log(`Hide port "${portName}" from the map`);
+    }
+  }
+}
+
+</script>
+-->
+        <!-- Menu Weather Radar -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Weather Radar</a>
+          <div class="dropdown-menu">
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="black-white"> Black and White</label>
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="original"> Original</label>
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="universal-blue"> Universal Blue</label>
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="titan"> TITAN</label>
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="weather-channel"> The Weather Channel</label>
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="meteored"> Meteored</label>
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="nexrad-level-iii"> NEXRAD Level III</label>
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="rainbow-selex-si"> RAINBOW @ SELEX-SI</label>
+            <label class="dropdown-item"><input type="radio" name="radar-option" value="dark-sky"> Dark Sky</label>
+          </div>
+        </li>
+
+        <script>
+          // Get all radio buttons within the dropdown menu
+          var radioButtons = document.querySelectorAll('.dropdown-menu input[type="radio"]');
+
+          // Add event listener to each radio button
+          radioButtons.forEach(function(radioButton) {
+            radioButton.addEventListener('change', function() {
+              // Close the dropdown menu when a radio button is selected
+              var dropdownMenu = this.closest('.dropdown-menu');
+              var dropdownToggle = dropdownMenu.previousElementSibling;
+              dropdownToggle.classList.remove('show');
+              });
+            });
+          </script>
+
+          <!--Menu Setup -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Setup</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">All</a></li>
+              <li><hr class="dropdown-divider"></hr></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#vesselModal">Vessels</a></li>
+              <li><a class="dropdown-item" href="#">Ports</a></li>
+              <li><hr class="dropdown-divider"></hr></li>
+              <li><a class="dropdown-item" href="#">Map</a></li>
+            </ul>
+          </li>
+
+          <!-- Menu About -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Help</a></li>
+              <li><hr class="dropdown-divider"></hr></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#aboutModal">About</a></li>
+            </ul>
+          </li>
+        </ul>
+
+<!--
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+-->
+        <form autocomplete="off" method='get' class='ajaxform' action="php/cruiser.php">
+        <div class="d-inline-flex align-items-center">
+          <div class="autocomplete" style="width:200px">
+            <input id="myCruise" type="text" name="ship" placeholder="Cruiseliner">
+          </div>
+          <div>
+            <input type="submit" value="Search">
+          </div>
+        </div>
+        </form>
+
+      </div> <!--nav bar-->
+    </div> <!-- menu container-->
+  </div> <!-- navigation container -->
+</nav> <!-- nav -->
+</div> <!-- top header -->
+
+<!-- Vessel Setup Modal -->
+<div class="modal" id="vesselModal">
+  <div class="modal-dialog modal-fullscreen">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Select Vessels</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-header text-center align-items-center">
+        <h5 class="modal-title m-auto" id="aboutModalLabel" style="font-family: Arial, sans-serif; font-weight: bold;">About</h5>
+      </div>
+      <div class="modal-body text-center">
+        <img src="images/icons/vesselTracker_240px.png" alt="Vessel Tracker Logo">
+        <p><p>Hugo Hiraoka</p>
+        <a>hhiraoka1@gmail.com</a>
+        <p style="font-family: Arial, sans-serif; font-weight: bold;">Vessel Tracker (c) 2023</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary mx-auto" data-bs-dismiss="modal" style="background-color: black; color: white;">OK</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 </body>
 </html>
+
+<!-- javascript for time -->
+<script>
+       //var browserTime = locationTime();
+       //console.log("Banner=" + banner);
+       var alternateText;
+       checkImage();
+       //setInterval(checkImage, 90000);
+       setInterval(checkImage, 5000);
+       function checkImage() {
+       browserTime = locationTime();
+       //console.log(banner);
+       //night
+       if (browserTime == 0)
+       {
+         document.getElementById("topBanner").src = "images/banners/tp_night.png";
+         //imageBanner = document.getElementById("images/banners/banner_night.jpg";
+         //alternateText = "Miami Teleport Night";
+         //<img class="img-fluid" src="images/banners/banner_night.jpg" alt="Miami Teleport Night">;
+       }
+       else if (browserTime == 1)
+       {
+         document.getElementById("topBanner").src = "images/banners/tp_morning.png";
+         //alternateText = "Miami Teleport Morning";
+         //<img class="img-fluid" src="images/banners/banner_morning.jpg" alt="Miami Teleport Morning">;
+       }
+       else if (browserTime == 2)
+       {
+         document.getElementById("topBanner").src = "images/banners/tp_noon.png";
+         //alternateText = "Miami Teleport Noon";
+         //<img class="img-fluid" src="images/banners/banner_noon.jpg" alt="Miami Teleport Noon">;
+       }
+       else if (browserTime == 3)
+       {
+         document.getElementById("topBanner").src = "images/banners/tp_afternoon.png";
+         //alternateText = "Miami Teleport Afternoon";
+         //<img class="img-fluid" src="images/banners/banner_afternoon.jpg" alt="Miami Teleport Afternoon">;
+       }
+       else//include_once "php/header.php";
+       {
+         document.getElementById("topBanner").src = "images/general/tp_noon.png";
+         //alternateText = "Miami Teleport";
+         //<img class="img-fluid" src="images/general/csc_miami_teleport_1920x40_banner_max.jpg" alt="Miami Teleport Night">; }
+       }
+       //document.write('<img class="img-fluid" src='+ imageBanner +' alt=' + alternateText + '>');
+       //<img id = "topBanner" class="img-fluid" src= document.write('"' + imageBanner + '" alt ="' + alternateText+'"')> ;
+       //markerColorShadow(browserTime);
+     }
+
+     </script>

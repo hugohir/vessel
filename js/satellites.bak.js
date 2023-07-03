@@ -126,9 +126,6 @@ var overlays_satellites = {
   "ABS3A Elevation": ABS3A_EV,
 };
 
-
-
-
 var layerControlSatellites = L.control.layers(null,overlays_satellites, {position:'topleft'}).addTo(map);
 
 }

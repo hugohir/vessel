@@ -5,7 +5,9 @@
 // Description: function that add cruiseliners
 //*****************************************************************************
 
-function cruiselineCompanyLayers(array) {
+function cruiselineCompanyLayers(arrayCruiselineCompanies) {
+
+  var numCruiselineCompanies = arrayCruiselineCompanies.length;
 
   //icon common characteristics
   var cruiselinerIcon = L.Icon.extend({

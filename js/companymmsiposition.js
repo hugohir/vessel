@@ -36,7 +36,6 @@ var cruiselinerIcon = L.Icon.extend({
 	const cCompanyName 		= [];
 	const cCompanyVesIcon	= [];
 
-
 //definition of arrays to hold data for each Position
 	const posEntriesNo	=	[];
   const posMMSI  			= [];
